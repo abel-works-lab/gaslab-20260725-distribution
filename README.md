@@ -96,6 +96,7 @@ npm run setup
 - **貼り付けた後、値がズレて別の項目に入ってしまうことがある**：「まとめて貼り付け」機能で自動分解された後、`WORKOS_REDIRECT_URI`に別の項目（APIキーなど）の値が入ってしまうことがあります。デプロイ後にログインできない場合は、Environment Variablesの各項目を1つずつ「Edit」で開いて、値が正しいものになっているか確認してください。
 - **`WORKOS_REDIRECT_URI`をなぜ変える必要があるのか**：ログイン後にWorkOSが「どこに戻すか」は、事前に登録したURLでしか許可されません。`.env.local`には手順3で`http://localhost:3100/callback`が自動設定されていますが、Vercel上ではアプリが別の場所（Vercelのサーバー）で動くため、戻り先のURLも変える必要があります。
 - **ログイン後にエラーになる**：Environment VariablesでVercel用に書き換えた`WORKOS_REDIRECT_URI`が、WorkOSダッシュボードのRedirectsにも登録されているか確認してください（登録されていないURLへの戻りは拒否されます）。WorkOSのエラー画面に「これらのいずれかを使用するつもりでしたか？」という候補が出ることがあるので、出ていればそれが正しいURLです。
+- **Redirectsに登録したのにログインできない**：末尾の`/callback`を付け忘れていないか確認してください（`https://my-app.vercel.app`ではなく`https://my-app.vercel.app/callback`が正しい値です）。
 
 手動で1つずつ設定したい場合は `ENV_SETUP.md` を参照してください。
 
