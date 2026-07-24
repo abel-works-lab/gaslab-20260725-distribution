@@ -13,14 +13,14 @@
 ## 必要なもの
 
 - Node.js 18以降
-- 以下3つのサービスの無料アカウント（手順3〜5で作成します）
+- 以下3つのサービスの無料アカウント（手順の中で作成します）
   - WorkOS（ログイン機能）
   - Convex（データベース）
   - fal.ai（AI呼び出し）
 
 ## セットアップ手順
 
-上から順番に実行してください。
+上から順番に実行してください。詰まったときは、末尾の「うまくいかないとき」を確認してください。
 
 ### 1. リポジトリをクローンする
 
@@ -55,14 +55,12 @@ npm run setup
 
 ### 5. 自動で開くブラウザでConvexにログインする
 
-1. 開いたページでログインする（新規プロジェクト作成時にリージョンを聞かれたら、どちらでも動作します。迷ったら「US East」でOK）
-2. 開発（Dev）デプロイメント側のConvexダッシュボード → Settings → Deploy Keys でキーを発行する（**権限選択は「Select all」推奨**。一部の権限だけ選ぶと、データ投入時に`Unauthorized`エラーになることがあります）
+1. 開いたページでログインする
+2. 開発（Dev）デプロイメント側のConvexダッシュボード → Settings → Deploy Keys でキーを発行する
 3. `.env.local` に貼り付けて保存する
 4. ターミナルに戻ってEnterキーを押す
 
 ここまで進むと、データの投入まで自動で完了します。
-
-**`.env.local`を書き換えた後にコマンドがエラーになった場合**：一度そのコマンドを最初からやり直してください（`npm run setup`をもう一度実行）。動作中のコマンドは起動時に読み込んだ値を使い続けるため、途中でファイルを書き換えても反映されないことがあります。
 
 ### 6. アプリを起動する
 
@@ -85,19 +83,30 @@ http://localhost:3100
 1. このリポジトリをGitHub上の自分のアカウントにフォーク、または新規リポジトリとしてpushする
 2. [vercel.com](https://vercel.com) でアカウントを作成する
 3. 「Add New...」→「Project」から、1のリポジトリをImportする
-4. Environment Variablesに、`.env.local`と同じ内容をすべて設定する。**`WORKOS_REDIRECT_URI`だけは例外**で、Vercelが発行するURL（例：`https://<プロジェクト名>.vercel.app/callback`）に変更する
-5. 「Deploy」を押す
-6. デプロイ完了後に発行されたURLを、WorkOSダッシュボードのRedirectsに追加登録する（ローカル用の`http://localhost:3100/callback`は残したまま、もう1つ追加する）
-7. デプロイされたURLを開き、ログインできれば完了
+4. Environment Variablesに `.env.local` の中身をすべて貼り付ける
+5. `WORKOS_REDIRECT_URI` の値だけを、Vercelが発行するURL（例：`https://<プロジェクト名>.vercel.app/callback`）に書き換える
+6. 「Deploy」を押す
+7. デプロイ完了後、発行されたURLをWorkOSダッシュボードのRedirectsに追加登録する（`http://localhost:3100/callback` は残したまま、もう1つ追加する）
+8. デプロイされたURLを開き、ログインできれば完了
 
 ## うまくいかないとき
+
+### セットアップ中（手順1〜7）
 
 - **`npm run dev` が `bad option` エラーで止まる**：[nodejs.org](https://nodejs.org/) から最新のLTS版Node.jsを入れ直してください。
 - **`unable to verify the first certificate` というエラーが出る**：PowerShellで `$env:NODE_OPTIONS="--use-system-ca"` を実行してから、同じターミナルでもう一度コマンドを実行してください。
 - **キーを`.env.local`に貼ってもコマンドが先に進まない**：貼り付けた値の前後に `"` や `'`、余分な空白が入っていないか確認してください。
+- **`.env.local`を書き換えた後にエラーになる**：一度そのコマンドを最初からやり直してください（`npm run setup`をもう一度実行）。動作中のコマンドは起動時に読み込んだ値を使い続けるため、途中でファイルを書き換えても反映されないことがあります。
+- **手順5で、Convexの新規プロジェクト作成時にリージョン（US East / Europe）を聞かれる**：どちらでも動作します。迷ったら「US East」を選んでください。
+- **手順5で、Deploy Key発行時に権限（Permissions）を選ぶ画面が出る**：「Select all」を選んでください。一部の権限だけ選ぶと、データ投入時に`Unauthorized`エラーになることがあります。すでになって場合は、Deploy Keyを新しく発行し直し（今度はSelect all）、`.env.local`を新しい値に差し替えてから`npm run setup`をもう一度実行してください。
 - **ログイン後にエラーになる**：手順3で登録したRedirect URIが `http://localhost:3100/callback` になっているか確認してください（他のポート番号だとログインが失敗します）。
-- **`Cannot read properties of undefined (reading 'split')` というエラーが出る**：同じPCの`localhost`で別のアプリにログインした際のCookieが残っている可能性があります（`localhost`はポート番号を区別せずCookieが共有されるため）。ブラウザのシークレットウィンドウで開き直すか、`localhost`のCookieを削除してください。
-- **Convexのデータ投入で`Unauthorized`エラーになる**：Deploy Key発行時の権限選択が不足している可能性があります。Convexダッシュボードで新しくDeploy Keyを発行し直し、今度は「Select all」を選んでください。新しいキーに差し替えたら、`npm run setup`をもう一度実行してください。
+- **ログイン後に`Cannot read properties of undefined (reading 'split')`というエラーが出る**：同じPCの`localhost`で別のアプリにログインした際のCookieが残っている可能性があります（`localhost`はポート番号を区別せずCookieが共有されるため）。ブラウザのシークレットウィンドウで開き直すか、`localhost`のCookieを削除してください。
+
+### Vercelデプロイ中（手順8）
+
+- **Environment Variablesの入力欄に、まとめて貼り付けたい**：「Key」の入力欄に、`.env.local`の中身をそのまま貼り付けると、複数の環境変数に自動で分解されます（1個ずつ手入力する必要はありません）。
+- **値を貼り付けても反映されないように見える**：反映に少し時間がかかることがあります。連打・連続貼り付けをすると同じ値が重複して入ってしまうので、一度貼り付けたら少し待って、内容を確認してから次に進んでください。
+- **`WORKOS_REDIRECT_URI`をなぜ変える必要があるのか**：ログイン後にWorkOSが「どこに戻すか」は、事前に登録したURLでしか許可されません。ローカルでは`http://localhost:3100/callback`でしたが、Vercel上ではアプリが別の場所（Vercelのサーバー）で動くため、戻り先のURLも変える必要があります。
 
 手動で1つずつ設定したい場合は `ENV_SETUP.md` を参照してください。
 
