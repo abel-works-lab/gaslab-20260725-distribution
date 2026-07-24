@@ -72,7 +72,11 @@ npm run setup
 3. 「Add New...」→「Project」から、1のリポジトリをImportする
 4. Environment Variablesに `.env.local` の中身をすべて貼り付ける（`WORKOS_REDIRECT_URI` はひとまずそのままでよい）
 5. 「Deploy」を押す
-6. デプロイ完了後、プロジェクト画面の「Domains」欄に表示されているURLを確認する（**Import画面の「Project Name」欄はそのままURLになるとは限らないので使わない**。重複回避のためのランダムな文字列が付き、実際のURLと異なることがある）
+6. デプロイ完了後、Vercelのプロジェクト画面（Overview）を開く。画面上部の「Production Deployment」というカードの中に、次の2つのURLらしき項目が並んで表示されている
+   - **Deployment**：`https://〇〇-xxxxxxxx-プロジェクト名.vercel.app`のような、ランダムな文字列を含む長いURL → **これは使わない**
+   - **Domains**：`https://〇〇.vercel.app`のような短いURL → **これが正しいURL**（外部リンクアイコンが付いている方）
+   
+   （**Import画面の「Project Name」欄もそのままURLになるとは限らないので使わない**。重複回避のためのランダムな文字列が付き、実際のURLと異なることがある）
 7. Vercelの Settings → Environment Variables で `WORKOS_REDIRECT_URI` の値を、手順6のURL＋`/callback`（例：`https://my-app.vercel.app/callback`）に書き換えて保存する
 8. WorkOSダッシュボードのRedirectsに、手順6のURL＋`/callback`を登録する
 9. Vercelの Deployments タブから「Redeploy」を実行する（環境変数の変更は自動では反映されないため）
