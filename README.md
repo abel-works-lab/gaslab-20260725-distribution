@@ -87,7 +87,12 @@ npm run setup
 ### セットアップ中（手順1〜5）
 
 - **`npm run setup` が `bad option` エラーで止まる**：[nodejs.org](https://nodejs.org/) から最新のLTS版Node.jsを入れ直してください。
-- **`unable to verify the first certificate` というエラーが出る**：PowerShellで `$env:NODE_OPTIONS="--use-system-ca"` を実行してから、同じターミナルでもう一度コマンドを実行してください。
+- **`unable to verify the first certificate` というエラーが出る**：同じターミナルで以下を実行してください。
+
+  ```powershell
+  $env:NODE_OPTIONS="--use-system-ca"
+  npm run setup
+  ```
 - **キーを`.env.local`に貼ってもコマンドが先に進まない**：貼り付けた値の前後に `"` や `'`、余分な空白が入っていないか確認してください。
 - **`.env.local`を書き換えた後にエラーになる**：一度そのコマンドを最初からやり直してください（`npm run setup`をもう一度実行）。動作中のコマンドは起動時に読み込んだ値を使い続けるため、途中でファイルを書き換えても反映されないことがあります。
 - **手順5で、Convexの新規プロジェクト作成時にリージョン（US East / Europe）を聞かれる**：どちらでも動作します。迷ったら「US East」を選んでください。
