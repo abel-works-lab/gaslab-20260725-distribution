@@ -110,12 +110,18 @@ Next.js 14 (App Router) / Convex / WorkOS AuthKit / Leaflet・react-leaflet / pp
 このアプリの元データがどう取得されたか、同じ方法を自分のPCでも試せます。**このリポジトリとは別の、新しい空のフォルダ**で行ってください（このリポジトリの`.env.local`とは無関係な、別プロジェクトの`.env`です。混ぜないよう注意してください）。
 
 1. [e-Stat公式サイト](https://www.e-stat.go.jp/api/)でアカウント登録し、マイページからAPIキーを発行する（無料・5分程度）
-2. 新しい空のフォルダを作り、以下を順番に実行する
+2. 新しい空のフォルダを作り、`.env`の雛形を用意する
 
 ```bash
 mkdir estat-mcp-server && cd estat-mcp-server
 pip install fastmcp
-echo 'ESTAT_API_KEY=（取得したキーを貼る）' >> .env
+echo 'ESTAT_API_KEY=' > .env
+```
+
+3. 作成された `.env` ファイルをエディタで開き、`ESTAT_API_KEY=` の後ろに手順1で取得したキーを貼り付けて保存する（**コマンドにキーを直接書かない**。ターミナルの履歴にキーが平文で残ってしまうため）
+4. 保存できたら、以下を実行する
+
+```bash
 claude -p --dangerously-skip-permissions "e-Stat APIを使ってMCPサーバーを作ってください。
 要件：
 - 言語：Python
