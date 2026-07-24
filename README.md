@@ -55,12 +55,14 @@ npm run setup
 
 ### 5. 自動で開くブラウザでConvexにログインする
 
-1. 開いたページでログインする
-2. 開発（Dev）デプロイメント側のConvexダッシュボード → Settings → Deploy Keys でキーを発行する
+1. 開いたページでログインする（新規プロジェクト作成時にリージョンを聞かれたら、どちらでも動作します。迷ったら「US East」でOK）
+2. 開発（Dev）デプロイメント側のConvexダッシュボード → Settings → Deploy Keys でキーを発行する（**権限選択は「Select all」推奨**。一部の権限だけ選ぶと、データ投入時に`Unauthorized`エラーになることがあります）
 3. `.env.local` に貼り付けて保存する
 4. ターミナルに戻ってEnterキーを押す
 
 ここまで進むと、データの投入まで自動で完了します。
+
+**`.env.local`を書き換えた後にコマンドがエラーになった場合**：一度そのコマンドを最初からやり直してください（`npm run setup`をもう一度実行）。動作中のコマンドは起動時に読み込んだ値を使い続けるため、途中でファイルを書き換えても反映されないことがあります。
 
 ### 6. アプリを起動する
 
@@ -94,6 +96,8 @@ http://localhost:3100
 - **`unable to verify the first certificate` というエラーが出る**：PowerShellで `$env:NODE_OPTIONS="--use-system-ca"` を実行してから、同じターミナルでもう一度コマンドを実行してください。
 - **キーを`.env.local`に貼ってもコマンドが先に進まない**：貼り付けた値の前後に `"` や `'`、余分な空白が入っていないか確認してください。
 - **ログイン後にエラーになる**：手順3で登録したRedirect URIが `http://localhost:3100/callback` になっているか確認してください（他のポート番号だとログインが失敗します）。
+- **`Cannot read properties of undefined (reading 'split')` というエラーが出る**：同じPCの`localhost`で別のアプリにログインした際のCookieが残っている可能性があります（`localhost`はポート番号を区別せずCookieが共有されるため）。ブラウザのシークレットウィンドウで開き直すか、`localhost`のCookieを削除してください。
+- **Convexのデータ投入で`Unauthorized`エラーになる**：Deploy Key発行時の権限選択が不足している可能性があります。Convexダッシュボードで新しくDeploy Keyを発行し直し、今度は「Select all」を選んでください。新しいキーに差し替えたら、`npm run setup`をもう一度実行してください。
 
 手動で1つずつ設定したい場合は `ENV_SETUP.md` を参照してください。
 
