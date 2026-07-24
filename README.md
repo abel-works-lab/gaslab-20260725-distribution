@@ -25,8 +25,8 @@
 ### 1. リポジトリをクローンする
 
 ```bash
-git clone <このリポジトリのURL>
-cd <クローンしたフォルダ名>
+git clone https://github.com/abel-works-lab/gaslab-20260725-distribution.git
+cd gaslab-20260725-distribution
 ```
 
 ### 2. セットアップコマンドを実行する
