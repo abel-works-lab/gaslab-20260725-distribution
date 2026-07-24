@@ -135,7 +135,7 @@ echo 'ESTAT_API_KEY=' > .env.local
 6. 保存できたら、`(venv)` が表示されたままの同じターミナルで以下を実行する
 
 ```bash
-claude -p --dangerously-skip-permissions "e-Stat APIを使ってMCPサーバーを作ってください。
+claude -p --dangerously-skip-permissions "e-Stat APIを使ってMCPサーバーを作ってください。確認や質問はせず、必要な調査は自動的に行った上で、最後まで実装を完了してください。
 要件：
 - 言語：Python
 - FastMCPライブラリを使う
@@ -149,6 +149,8 @@ claude -p --dangerously-skip-permissions "e-Stat APIを使ってMCPサーバー�
 ```
 
 これで `server.py`（MCPサーバー本体）と `.mcp.json`（Claude Codeが接続するための設定ファイル）が生成されます。次回Claude Codeを起動すると自動で接続され、「e-Statで◯◯のデータを探して」と頼むだけでデータを取得できるようになります。
+
+- **`-p`は1回限りの非対話モード**：途中で確認や質問をされても返信できず、そこで処理が止まります。もしファイルが何も生成されずに終わっていたら（`ls`で確認）、同じコマンドをもう一度実行してください。
 
 - `--dangerously-skip-permissions` は確認プロンプトを省略するフラグです。**信頼できるまっさらなプロジェクトフォルダでのみ**使ってください。
 - 都度確認しながら進めたい場合は、`-p` を付けずに `claude` だけを実行し、対話画面でプロンプトを貼り付けて実行してください。
