@@ -117,3 +117,31 @@ Next.js 14 (App Router) / Convex / WorkOS AuthKit / Leaflet・react-leaflet / pp
 ## データについて
 
 `data/` 配下のJSONは、e-Stat APIで取得した政府統計データを都道府県・市町村単位に加工した実データです（個人情報は含みません）。
+
+## （参考）e-Stat APIとMCPサーバーを自分で構築する
+
+このアプリの元データがどう取得されたか、同じ方法を自分のPCでも試せます（このリポジトリの動作には不要な、参考情報です）。
+
+1. [e-Stat公式サイト](https://www.e-stat.go.jp/api/)でアカウント登録し、マイページからAPIキーを発行する（無料・5分程度）
+2. 以下を順番に実行する
+
+```bash
+pip install fastmcp
+echo 'ESTAT_API_KEY=（取得したキーを貼る）' >> .env
+claude -p --dangerously-skip-permissions "e-Stat APIを使ってMCPサーバーを作ってください。
+要件：
+- 言語：Python
+- FastMCPライブラリを使う
+- APIキーは .env の ESTAT_API_KEY から読む
+- 以下の4つの機能を実装してください：
+  1. キーワードで統計を検索する機能
+  2. 統計IDを指定してデータを取得する機能
+  3. ローカルに保存されたCSVファイルの一覧を表示する機能
+  4. ローカルのCSVファイルを読み込む機能
+- あわせて .mcp.json もプロジェクトフォルダのルートに作成してください"
+```
+
+これで `server.py`（MCPサーバー本体）と `.mcp.json`（Claude Codeが接続するための設定ファイル）が生成されます。次回Claude Codeを起動すると自動で接続され、「e-Statで◯◯のデータを探して」と頼むだけでデータを取得できるようになります。
+
+- `--dangerously-skip-permissions` は確認プロンプトを省略するフラグです。**信頼できるまっさらなプロジェクトフォルダでのみ**使ってください。
+- 都度確認しながら進めたい場合は、`-p` を付けずに `claude` だけを実行し、対話画面でプロンプトを貼り付けて実行してください。
