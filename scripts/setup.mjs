@@ -170,9 +170,8 @@ await waitUntilAllFilled(
     '以下の手順でWorkOSのキーを取得し、.env.local に貼り付けてください（引用符は付けずそのまま貼ってください）:',
     '  1. https://dashboard.workos.com でアカウント作成・ログイン',
     '  2. Applications で新規Applicationを作成',
-    '  3. Redirects に http://localhost:3100/callback を登録',
-    '  4. AuthKit を有効化（Email+Password 等）',
-    '  5. API Key と Client ID をコピーし、.env.local の WORKOS_API_KEY= / WORKOS_CLIENT_ID= に貼る',
+    '  3. AuthKit を有効化（Email+Password 等）',
+    '  4. API Key と Client ID をコピーし、.env.local の WORKOS_API_KEY= / WORKOS_CLIENT_ID= に貼る',
   ].join('\n'),
 )
 
@@ -213,5 +212,4 @@ run('node', ['scripts/seed_muni_stats.mjs'])
 run('node', ['scripts/seed_region.mjs'])
 
 console.log('\n=== セットアップ完了 ===')
-console.log('次のコマンドで起動してください: npm run dev')
-console.log('ブラウザで http://localhost:3100 を開いてください')
+console.log('次はVercelにデプロイしてください（READMEの「6. Vercelにデプロイする」を参照）')
