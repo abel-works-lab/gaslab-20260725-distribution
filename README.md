@@ -43,10 +43,9 @@ npm run setup
 
 1. アカウントを作成する
 2. Applicationを新規作成する
-3. Redirectsに `http://localhost:3100/callback` を登録する
-4. AuthKitを有効化する
-5. 表示された `API Key` と `Client ID` をコピーし、開いている `.env.local` に貼り付けて保存する
-6. ターミナルに戻ってEnterキーを押す
+3. AuthKitを有効化する
+4. 表示された `API Key` と `Client ID` をコピーし、開いている `.env.local` に貼り付けて保存する
+5. ターミナルに戻ってEnterキーを押す
 
 ### 4. 自動で開くブラウザでfal.aiのキーを設定する
 
@@ -74,7 +73,7 @@ npm run setup
 4. Environment Variablesに `.env.local` の中身をすべて貼り付ける
 5. `WORKOS_REDIRECT_URI` の値だけを、Vercelが発行するURL（例：`https://<プロジェクト名>.vercel.app/callback`）に書き換える
 6. 「Deploy」を押す
-7. デプロイ完了後、発行されたURLをWorkOSダッシュボードのRedirectsに追加登録する（`http://localhost:3100/callback` は残したまま、もう1つ追加する）
+7. デプロイ完了後、発行されたURLをWorkOSダッシュボードのRedirectsに登録する
 8. デプロイされたURLを開き、ログインできれば完了
 
 ## うまくいかないとき
