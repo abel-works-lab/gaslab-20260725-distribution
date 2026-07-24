@@ -76,6 +76,18 @@ http://localhost:3100
 
 ログイン画面が表示されるので、WorkOSでログインすると地図画面が表示されます。
 
+### 8. Vercelにデプロイする（任意）
+
+ローカルでの動作確認ができたら、インターネット上に公開できます。
+
+1. このリポジトリをGitHub上の自分のアカウントにフォーク、または新規リポジトリとしてpushする
+2. [vercel.com](https://vercel.com) でアカウントを作成する
+3. 「Add New...」→「Project」から、1のリポジトリをImportする
+4. Environment Variablesに、`.env.local`と同じ内容をすべて設定する。**`WORKOS_REDIRECT_URI`だけは例外**で、Vercelが発行するURL（例：`https://<プロジェクト名>.vercel.app/callback`）に変更する
+5. 「Deploy」を押す
+6. デプロイ完了後に発行されたURLを、WorkOSダッシュボードのRedirectsに追加登録する（ローカル用の`http://localhost:3100/callback`は残したまま、もう1つ追加する）
+7. デプロイされたURLを開き、ログインできれば完了
+
 ## うまくいかないとき
 
 - **`npm run dev` が `bad option` エラーで止まる**：[nodejs.org](https://nodejs.org/) から最新のLTS版Node.jsを入れ直してください。
