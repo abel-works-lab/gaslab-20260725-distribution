@@ -213,3 +213,4 @@ run('node', ['scripts/seed_region.mjs'])
 
 console.log('\n=== セットアップ完了 ===')
 console.log('次はVercelにデプロイしてください（READMEの「6. Vercelにデプロイする」を参照）')
+openUrl('https://vercel.com/new')
