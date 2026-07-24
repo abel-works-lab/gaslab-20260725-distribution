@@ -70,12 +70,13 @@ npm run setup
 1. このリポジトリをGitHub上の自分のアカウントにフォーク、または新規リポジトリとしてpushする
 2. [vercel.com](https://vercel.com) でアカウントを作成する
 3. 「Add New...」→「Project」から、1のリポジトリをImportする
-4. Import画面に表示されている「Project Name」の値を確認する（例：`my-app-1234`）。この値がそのままデプロイ後のURLになります（`https://my-app-1234.vercel.app`）
-5. Environment Variablesに `.env.local` の中身をすべて貼り付ける
-6. `WORKOS_REDIRECT_URI` の値だけを、手順4で確認したURL＋`/callback`（例：`https://my-app-1234.vercel.app/callback`）に書き換える
-7. 「Deploy」を押す
-8. デプロイ完了後、手順4のURLをWorkOSダッシュボードのRedirectsに登録する
-9. デプロイされたURLを開き、ログインできれば完了
+4. Environment Variablesに `.env.local` の中身をすべて貼り付ける（`WORKOS_REDIRECT_URI` はひとまずそのままでよい）
+5. 「Deploy」を押す
+6. デプロイ完了後、プロジェクト画面の「Domains」欄に表示されているURLを確認する（**Import画面の「Project Name」欄はそのままURLになるとは限らないので使わない**。重複回避のためのランダムな文字列が付き、実際のURLと異なることがある）
+7. Vercelの Settings → Environment Variables で `WORKOS_REDIRECT_URI` の値を、手順6のURL＋`/callback`（例：`https://my-app.vercel.app/callback`）に書き換えて保存する
+8. WorkOSダッシュボードのRedirectsに、手順6のURL＋`/callback`を登録する
+9. Vercelの Deployments タブから「Redeploy」を実行する（環境変数の変更は自動では反映されないため）
+10. デプロイされたURLを開き、ログインできれば完了
 
 ## うまくいかないとき
 
@@ -92,8 +93,9 @@ npm run setup
 
 - **Environment Variablesの入力欄に、まとめて貼り付けたい**：「Key」の入力欄に、`.env.local`の中身をそのまま貼り付けると、複数の環境変数に自動で分解されます（1個ずつ手入力する必要はありません）。
 - **値を貼り付けても反映されないように見える**：反映に少し時間がかかることがあります。連打・連続貼り付けをすると同じ値が重複して入ってしまうので、一度貼り付けたら少し待って、内容を確認してから次に進んでください。
+- **貼り付けた後、値がズレて別の項目に入ってしまうことがある**：「まとめて貼り付け」機能で自動分解された後、`WORKOS_REDIRECT_URI`に別の項目（APIキーなど）の値が入ってしまうことがあります。デプロイ後にログインできない場合は、Environment Variablesの各項目を1つずつ「Edit」で開いて、値が正しいものになっているか確認してください。
 - **`WORKOS_REDIRECT_URI`をなぜ変える必要があるのか**：ログイン後にWorkOSが「どこに戻すか」は、事前に登録したURLでしか許可されません。`.env.local`には手順3で`http://localhost:3100/callback`が自動設定されていますが、Vercel上ではアプリが別の場所（Vercelのサーバー）で動くため、戻り先のURLも変える必要があります。
-- **ログイン後にエラーになる**：Environment VariablesでVercel用に書き換えた`WORKOS_REDIRECT_URI`が、WorkOSダッシュボードのRedirectsにも登録されているか確認してください（登録されていないURLへの戻りは拒否されます）。
+- **ログイン後にエラーになる**：Environment VariablesでVercel用に書き換えた`WORKOS_REDIRECT_URI`が、WorkOSダッシュボードのRedirectsにも登録されているか確認してください（登録されていないURLへの戻りは拒否されます）。WorkOSのエラー画面に「これらのいずれかを使用するつもりでしたか？」という候補が出ることがあるので、出ていればそれが正しいURLです。
 
 手動で1つずつ設定したい場合は `ENV_SETUP.md` を参照してください。
 
