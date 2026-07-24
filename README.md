@@ -110,16 +110,29 @@ Next.js 14 (App Router) / Convex / WorkOS AuthKit / Leaflet・react-leaflet / pp
 このアプリの元データがどう取得されたか、同じ方法を自分のPCでも試せます。**このリポジトリとは別の、新しい空のフォルダ**で行ってください（環境変数ファイルの名前はこのリポジトリと同じ`.env.local`ですが、フォルダが違うので別ファイルです）。
 
 1. [e-Stat公式サイト](https://www.e-stat.go.jp/api/)でアカウント登録し、マイページからAPIキーを発行する（無料・5分程度）
-2. 新しい空のフォルダを作り、`.env.local`の雛形を用意する
+2. 新しい空のフォルダを作り、Python仮想環境（venv）を作る
 
 ```bash
 mkdir estat-mcp-server && cd estat-mcp-server
+python -m venv venv
+```
+
+3. 仮想環境を有効化する（PC全体のPython環境を汚さないため。**この手順を飛ばして`pip install`すると、他のPythonプロジェクトのパッケージが意図せず書き換わることがあります**）
+
+- Windows（PowerShell）：`.\venv\Scripts\Activate.ps1`
+- Mac/Linux：`source venv/bin/activate`
+
+ターミナルの行頭に `(venv)` と表示されれば成功です。
+
+4. `.env.local`の雛形を用意する
+
+```bash
 pip install fastmcp
 echo 'ESTAT_API_KEY=' > .env.local
 ```
 
-3. 作成された `.env.local` ファイルをエディタで開き、`ESTAT_API_KEY=` の後ろに手順1で取得したキーを貼り付けて保存する（**コマンドにキーを直接書かない**。ターミナルの履歴にキーが平文で残ってしまうため）
-4. 保存できたら、以下を実行する
+5. 作成された `.env.local` ファイルをエディタで開き、`ESTAT_API_KEY=` の後ろに手順1で取得したキーを貼り付けて保存する（**コマンドにキーを直接書かない**。ターミナルの履歴にキーが平文で残ってしまうため）
+6. 保存できたら、`(venv)` が表示されたままの同じターミナルで以下を実行する
 
 ```bash
 claude -p --dangerously-skip-permissions "e-Stat APIを使ってMCPサーバーを作ってください。
@@ -132,7 +145,7 @@ claude -p --dangerously-skip-permissions "e-Stat APIを使ってMCPサーバー�
   2. 統計IDを指定してデータを取得する機能
   3. ローカルに保存されたCSVファイルの一覧を表示する機能
   4. ローカルのCSVファイルを読み込む機能
-- あわせて .mcp.json もプロジェクトフォルダのルートに作成してください"
+- あわせて .mcp.json もプロジェクトフォルダのルートに作成してください（このvenv環境のPythonを使うようcommandを設定してください）"
 ```
 
 これで `server.py`（MCPサーバー本体）と `.mcp.json`（Claude Codeが接続するための設定ファイル）が生成されます。次回Claude Codeを起動すると自動で接続され、「e-Statで◯◯のデータを探して」と頼むだけでデータを取得できるようになります。
