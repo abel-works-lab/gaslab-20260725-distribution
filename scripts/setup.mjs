@@ -84,6 +84,23 @@ function ask(question) {
   return new Promise((resolve) => rl.question(question, (ans) => { rl.close(); resolve(ans) }))
 }
 
+// OS標準コマンドでURLをデフォルトブラウザで自動的に開く。失敗しても握りつぶす
+// （呼び出し側で必ずURLをコンソールにも表示するため、失敗時は手動で開けば良いだけ）
+function openUrl(url) {
+  console.log(`→ ブラウザで開きます: ${url}`)
+  try {
+    if (process.platform === 'win32') {
+      spawnSync('cmd', ['/c', 'start', '', url], { stdio: 'ignore' })
+    } else if (process.platform === 'darwin') {
+      spawnSync('open', [url], { stdio: 'ignore' })
+    } else {
+      spawnSync('xdg-open', [url], { stdio: 'ignore' })
+    }
+  } catch {
+    console.log('（自動で開けませんでした。上記URLを手動で開いてください）')
+  }
+}
+
 async function waitUntilAllFilled(names, guideText) {
   if (names.every(isFilled)) {
     console.log(`✓ 設定済みです: ${names.join(', ')}`)
@@ -144,6 +161,9 @@ console.log('✓ WORKOS_COOKIE_PASSWORD / WORKOS_REDIRECT_URI を確認・設定
 
 // 3. WorkOSキーの入力待ち
 console.log('\n[3/6] WorkOSの設定')
+if (!isFilled('WORKOS_API_KEY') || !isFilled('WORKOS_CLIENT_ID')) {
+  openUrl('https://dashboard.workos.com')
+}
 await waitUntilAllFilled(
   ['WORKOS_API_KEY', 'WORKOS_CLIENT_ID'],
   [
@@ -158,6 +178,9 @@ await waitUntilAllFilled(
 
 // 4. fal.aiキーの入力待ち
 console.log('\n[4/6] fal.aiの設定（AIインサイト・レポート・PPTX生成に必須）')
+if (!isFilled('FAL_KEY')) {
+  openUrl('https://fal.ai')
+}
 await waitUntilAllFilled(
   ['FAL_KEY'],
   [
