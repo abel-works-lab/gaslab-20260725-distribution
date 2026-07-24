@@ -102,7 +102,7 @@ npm run setup
 
 - **Environment Variablesの入力欄に、まとめて貼り付けたい**：「Key」の入力欄に、`.env.local`の中身をそのまま貼り付けると、複数の環境変数に自動で分解されます（1個ずつ手入力する必要はありません）。
 - **値を貼り付けても反映されないように見える**：反映に少し時間がかかることがあります。連打・連続貼り付けをすると同じ値が重複して入ってしまうので、一度貼り付けたら少し待って、内容を確認してから次に進んでください。
-- **貼り付けた後、値がズレて別の項目に入ってしまうことがある**：「まとめて貼り付け」機能で自動分解された後、`WORKOS_REDIRECT_URI`に別の項目（APIキーなど）の値が入ってしまうことがあります。デプロイ後にログインできない場合は、Environment Variablesの各項目を1つずつ「Edit」で開いて、値が正しいものになっているか確認してください。
+- **貼り付けた後、値がズレて別の項目に入ってしまうことがある**：「まとめて貼り付け」機能で自動分解された後、`WORKOS_REDIRECT_URI`に別の項目（APIキーなど）の値が入ってしまうことがあります。よく発生する事故なので、貼り付けた直後に必ず確認してください。この状態で開くと、画面に`500: INTERNAL_SERVER_ERROR` / `Code: MIDDLEWARE_INVOCATION_FAILED`と表示されたり、Vercelの Logs に`TypeError: Invalid URL`と出たりします。デプロイ後にログインできない・このエラーが出る場合は、Environment Variablesの各項目を1つずつ「Edit」で開いて、値が正しいものになっているか確認してください。
 - **`WORKOS_REDIRECT_URI`をなぜ変える必要があるのか**：ログイン後にWorkOSが「どこに戻すか」は、事前に登録したURLでしか許可されません。`.env.local`には手順3で`http://localhost:3100/callback`が自動設定されていますが、Vercel上ではアプリが別の場所（Vercelのサーバー）で動くため、戻り先のURLも変える必要があります。
 - **ログイン後にエラーになる**：Environment VariablesでVercel用に書き換えた`WORKOS_REDIRECT_URI`が、WorkOSダッシュボードのRedirectsにも登録されているか確認してください（登録されていないURLへの戻りは拒否されます）。WorkOSのエラー画面に「これらのいずれかを使用するつもりでしたか？」という候補が出ることがあるので、出ていればそれが正しいURLです。
 - **Redirectsに登録したのにログインできない**：末尾の`/callback`を付け忘れていないか確認してください（`https://my-app.vercel.app`ではなく`https://my-app.vercel.app/callback`が正しい値です）。
