@@ -1,0 +1,472 @@
+[
+ {
+  "level": "pref",
+  "pref": "北海道",
+  "name": "北海道",
+  "kokuho": 440386,
+  "kouki": 1068304,
+  "year": "2023",
+  "koukiKenshin": 49.5,
+  "tokuteiHoken": 22.4
+ },
+ {
+  "level": "pref",
+  "pref": "青森県",
+  "name": "青森県",
+  "kokuho": 399182,
+  "kouki": 819854,
+  "year": "2023",
+  "koukiKenshin": 53.5,
+  "tokuteiHoken": 31.0
+ },
+ {
+  "level": "pref",
+  "pref": "岩手県",
+  "name": "岩手県",
+  "kokuho": 426970,
+  "kouki": 775542,
+  "year": "2023",
+  "koukiKenshin": 60.4,
+  "tokuteiHoken": 26.2
+ },
+ {
+  "level": "pref",
+  "pref": "宮城県",
+  "name": "宮城県",
+  "kokuho": 425814,
+  "kouki": 850211,
+  "year": "2023",
+  "koukiKenshin": 63.8,
+  "tokuteiHoken": 28.6
+ },
+ {
+  "level": "pref",
+  "pref": "秋田県",
+  "name": "秋田県",
+  "kokuho": 454836,
+  "kouki": 811209,
+  "year": "2023",
+  "koukiKenshin": 56.4,
+  "tokuteiHoken": 28.8
+ },
+ {
+  "level": "pref",
+  "pref": "山形県",
+  "name": "山形県",
+  "kokuho": 440817,
+  "kouki": 849237,
+  "year": "2023",
+  "koukiKenshin": 69.9,
+  "tokuteiHoken": 33.9
+ },
+ {
+  "level": "pref",
+  "pref": "福島県",
+  "name": "福島県",
+  "kokuho": 402949,
+  "kouki": 823579,
+  "year": "2023",
+  "koukiKenshin": 58.3,
+  "tokuteiHoken": 29.5
+ },
+ {
+  "level": "pref",
+  "pref": "茨城県",
+  "name": "茨城県",
+  "kokuho": 359046,
+  "kouki": 847526,
+  "year": "2023",
+  "koukiKenshin": 57.0,
+  "tokuteiHoken": 25.7
+ },
+ {
+  "level": "pref",
+  "pref": "栃木県",
+  "name": "栃木県",
+  "kokuho": 391681,
+  "kouki": 836172,
+  "year": "2023",
+  "koukiKenshin": 60.8,
+  "tokuteiHoken": 31.6
+ },
+ {
+  "level": "pref",
+  "pref": "群馬県",
+  "name": "群馬県",
+  "kokuho": 388664,
+  "kouki": 860029,
+  "year": "2023",
+  "koukiKenshin": 57.9,
+  "tokuteiHoken": 22.1
+ },
+ {
+  "level": "pref",
+  "pref": "埼玉県",
+  "name": "埼玉県",
+  "kokuho": 372594,
+  "kouki": 843815,
+  "year": "2023",
+  "koukiKenshin": 59.0,
+  "tokuteiHoken": 20.8
+ },
+ {
+  "level": "pref",
+  "pref": "千葉県",
+  "name": "千葉県",
+  "kokuho": 376983,
+  "kouki": 831870,
+  "year": "2023",
+  "koukiKenshin": 58.1,
+  "tokuteiHoken": 26.0
+ },
+ {
+  "level": "pref",
+  "pref": "東京都",
+  "name": "東京都",
+  "kokuho": 358816,
+  "kouki": 948906,
+  "year": "2023",
+  "koukiKenshin": 74.6,
+  "tokuteiHoken": 26.7
+ },
+ {
+  "level": "pref",
+  "pref": "神奈川県",
+  "name": "神奈川県",
+  "kokuho": 388852,
+  "kouki": 882594,
+  "year": "2023",
+  "koukiKenshin": 59.3,
+  "tokuteiHoken": 25.0
+ },
+ {
+  "level": "pref",
+  "pref": "新潟県",
+  "name": "新潟県",
+  "kokuho": 419644,
+  "kouki": 765344,
+  "year": "2023",
+  "koukiKenshin": 64.4,
+  "tokuteiHoken": 30.6
+ },
+ {
+  "level": "pref",
+  "pref": "富山県",
+  "name": "富山県",
+  "kokuho": 431292,
+  "kouki": 933522,
+  "year": "2023",
+  "koukiKenshin": 65.9,
+  "tokuteiHoken": 29.9
+ },
+ {
+  "level": "pref",
+  "pref": "石川県",
+  "name": "石川県",
+  "kokuho": 454434,
+  "kouki": 971713,
+  "year": "2023",
+  "koukiKenshin": 61.2,
+  "tokuteiHoken": 28.5
+ },
+ {
+  "level": "pref",
+  "pref": "福井県",
+  "name": "福井県",
+  "kokuho": 446805,
+  "kouki": 912155,
+  "year": "2023",
+  "koukiKenshin": 60.3,
+  "tokuteiHoken": 28.2
+ },
+ {
+  "level": "pref",
+  "pref": "山梨県",
+  "name": "山梨県",
+  "kokuho": 392604,
+  "kouki": 864209,
+  "year": "2023",
+  "koukiKenshin": 63.8,
+  "tokuteiHoken": 31.4
+ },
+ {
+  "level": "pref",
+  "pref": "長野県",
+  "name": "長野県",
+  "kokuho": 403663,
+  "kouki": 854799,
+  "year": "2023",
+  "koukiKenshin": 64.4,
+  "tokuteiHoken": 35.3
+ },
+ {
+  "level": "pref",
+  "pref": "岐阜県",
+  "name": "岐阜県",
+  "kokuho": 420527,
+  "kouki": 868284,
+  "year": "2023",
+  "koukiKenshin": 59.6,
+  "tokuteiHoken": 33.6
+ },
+ {
+  "level": "pref",
+  "pref": "静岡県",
+  "name": "静岡県",
+  "kokuho": 405940,
+  "kouki": 834967,
+  "year": "2023",
+  "koukiKenshin": 61.2,
+  "tokuteiHoken": 28.5
+ },
+ {
+  "level": "pref",
+  "pref": "愛知県",
+  "name": "愛知県",
+  "kokuho": 379937,
+  "kouki": 950023,
+  "year": "2023",
+  "koukiKenshin": 63.3,
+  "tokuteiHoken": 33.0
+ },
+ {
+  "level": "pref",
+  "pref": "三重県",
+  "name": "三重県",
+  "kokuho": 433776,
+  "kouki": 864937,
+  "year": "2023",
+  "koukiKenshin": 63.7,
+  "tokuteiHoken": 27.0
+ },
+ {
+  "level": "pref",
+  "pref": "滋賀県",
+  "name": "滋賀県",
+  "kokuho": 414066,
+  "kouki": 932976,
+  "year": "2023",
+  "koukiKenshin": 62.3,
+  "tokuteiHoken": 29.6
+ },
+ {
+  "level": "pref",
+  "pref": "京都府",
+  "name": "京都府",
+  "kokuho": 411003,
+  "kouki": 1018864,
+  "year": "2023",
+  "koukiKenshin": 58.7,
+  "tokuteiHoken": 27.8
+ },
+ {
+  "level": "pref",
+  "pref": "大阪府",
+  "name": "大阪府",
+  "kokuho": 409281,
+  "kouki": 1060579,
+  "year": "2023",
+  "koukiKenshin": 54.8,
+  "tokuteiHoken": 21.5
+ },
+ {
+  "level": "pref",
+  "pref": "兵庫県",
+  "name": "兵庫県",
+  "kokuho": 427818,
+  "kouki": 1013871,
+  "year": "2023",
+  "koukiKenshin": 56.3,
+  "tokuteiHoken": 24.6
+ },
+ {
+  "level": "pref",
+  "pref": "奈良県",
+  "name": "奈良県",
+  "kokuho": 411585,
+  "kouki": 936765,
+  "year": "2023",
+  "koukiKenshin": 52.0,
+  "tokuteiHoken": 24.4
+ },
+ {
+  "level": "pref",
+  "pref": "和歌山県",
+  "name": "和歌山県",
+  "kokuho": 405422,
+  "kouki": 944112,
+  "year": "2023",
+  "koukiKenshin": 52.1,
+  "tokuteiHoken": 25.2
+ },
+ {
+  "level": "pref",
+  "pref": "鳥取県",
+  "name": "鳥取県",
+  "kokuho": 445290,
+  "kouki": 942971,
+  "year": "2023",
+  "koukiKenshin": 56.4,
+  "tokuteiHoken": 28.4
+ },
+ {
+  "level": "pref",
+  "pref": "島根県",
+  "name": "島根県",
+  "kokuho": 516211,
+  "kouki": 944692,
+  "year": "2023",
+  "koukiKenshin": 61.8,
+  "tokuteiHoken": 30.2
+ },
+ {
+  "level": "pref",
+  "pref": "岡山県",
+  "name": "岡山県",
+  "kokuho": 460357,
+  "kouki": 991115,
+  "year": "2023",
+  "koukiKenshin": 58.7,
+  "tokuteiHoken": 35.5
+ },
+ {
+  "level": "pref",
+  "pref": "広島県",
+  "name": "広島県",
+  "kokuho": 438542,
+  "kouki": 1052843,
+  "year": "2023",
+  "koukiKenshin": 56.3,
+  "tokuteiHoken": 28.5
+ },
+ {
+  "level": "pref",
+  "pref": "山口県",
+  "name": "山口県",
+  "kokuho": 509932,
+  "kouki": 1031806,
+  "year": "2023",
+  "koukiKenshin": 53.4,
+  "tokuteiHoken": 24.6
+ },
+ {
+  "level": "pref",
+  "pref": "徳島県",
+  "name": "徳島県",
+  "kokuho": 473359,
+  "kouki": 1067952,
+  "year": "2023",
+  "koukiKenshin": 54.1,
+  "tokuteiHoken": 36.8
+ },
+ {
+  "level": "pref",
+  "pref": "香川県",
+  "name": "香川県",
+  "kokuho": 490721,
+  "kouki": 977779,
+  "year": "2023",
+  "koukiKenshin": 58.0,
+  "tokuteiHoken": 37.6
+ },
+ {
+  "level": "pref",
+  "pref": "愛媛県",
+  "name": "愛媛県",
+  "kokuho": 440698,
+  "kouki": 955296,
+  "year": "2023",
+  "koukiKenshin": 54.4,
+  "tokuteiHoken": 28.2
+ },
+ {
+  "level": "pref",
+  "pref": "高知県",
+  "name": "高知県",
+  "kokuho": 467629,
+  "kouki": 1154935,
+  "year": "2023",
+  "koukiKenshin": 55.9,
+  "tokuteiHoken": 26.1
+ },
+ {
+  "level": "pref",
+  "pref": "福岡県",
+  "name": "福岡県",
+  "kokuho": 418172,
+  "kouki": 1169586,
+  "year": "2023",
+  "koukiKenshin": 55.1,
+  "tokuteiHoken": 31.0
+ },
+ {
+  "level": "pref",
+  "pref": "佐賀県",
+  "name": "佐賀県",
+  "kokuho": 501626,
+  "kouki": 1100088,
+  "year": "2023",
+  "koukiKenshin": 56.5,
+  "tokuteiHoken": 34.6
+ },
+ {
+  "level": "pref",
+  "pref": "長崎県",
+  "name": "長崎県",
+  "kokuho": 485211,
+  "kouki": 1092524,
+  "year": "2023",
+  "koukiKenshin": 52.1,
+  "tokuteiHoken": 33.2
+ },
+ {
+  "level": "pref",
+  "pref": "熊本県",
+  "name": "熊本県",
+  "kokuho": 462819,
+  "kouki": 1087781,
+  "year": "2023",
+  "koukiKenshin": 56.4,
+  "tokuteiHoken": 41.5
+ },
+ {
+  "level": "pref",
+  "pref": "大分県",
+  "name": "大分県",
+  "kokuho": 488718,
+  "kouki": 1059502,
+  "year": "2023",
+  "koukiKenshin": 60.0,
+  "tokuteiHoken": 35.4
+ },
+ {
+  "level": "pref",
+  "pref": "宮崎県",
+  "name": "宮崎県",
+  "kokuho": 440641,
+  "kouki": 924652,
+  "year": "2023",
+  "koukiKenshin": 54.7,
+  "tokuteiHoken": 30.8
+ },
+ {
+  "level": "pref",
+  "pref": "鹿児島県",
+  "name": "鹿児島県",
+  "kokuho": 501700,
+  "kouki": 1120182,
+  "year": "2023",
+  "koukiKenshin": 51.7,
+  "tokuteiHoken": 27.5
+ },
+ {
+  "level": "pref",
+  "pref": "沖縄県",
+  "name": "沖縄県",
+  "kokuho": 361638,
+  "kouki": 1039947,
+  "year": "2023",
+  "koukiKenshin": 53.9,
+  "tokuteiHoken": 36.4
+ }
+]
