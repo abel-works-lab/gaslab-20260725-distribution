@@ -70,11 +70,12 @@ npm run setup
 1. このリポジトリをGitHub上の自分のアカウントにフォーク、または新規リポジトリとしてpushする
 2. [vercel.com](https://vercel.com) でアカウントを作成する
 3. 「Add New...」→「Project」から、1のリポジトリをImportする
-4. Environment Variablesに `.env.local` の中身をすべて貼り付ける
-5. `WORKOS_REDIRECT_URI` の値だけを、Vercelが発行するURL（例：`https://<プロジェクト名>.vercel.app/callback`）に書き換える
-6. 「Deploy」を押す
-7. デプロイ完了後、発行されたURLをWorkOSダッシュボードのRedirectsに登録する
-8. デプロイされたURLを開き、ログインできれば完了
+4. Import画面に表示されている「Project Name」の値を確認する（例：`my-app-1234`）。この値がそのままデプロイ後のURLになります（`https://my-app-1234.vercel.app`）
+5. Environment Variablesに `.env.local` の中身をすべて貼り付ける
+6. `WORKOS_REDIRECT_URI` の値だけを、手順4で確認したURL＋`/callback`（例：`https://my-app-1234.vercel.app/callback`）に書き換える
+7. 「Deploy」を押す
+8. デプロイ完了後、手順4のURLをWorkOSダッシュボードのRedirectsに登録する
+9. デプロイされたURLを開き、ログインできれば完了
 
 ## うまくいかないとき
 
